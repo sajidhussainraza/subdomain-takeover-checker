@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="500" viewBox="0 0 1000 500" role="img" aria-label="Terminal preview of Subdomain Takeover Checker grading the sample DNS export, scoring 20 out of 100, grade F">
+<rect width="1000" height="500" rx="16" fill="#0b1e3a"/>
+<rect x="1" y="1" width="998" height="498" rx="15" fill="none" stroke="#14b8a6" stroke-width="2"/>
+<circle cx="40" cy="36" r="8" fill="#ef4444"/><circle cx="66" cy="36" r="8" fill="#f59e0b"/><circle cx="92" cy="36" r="8" fill="#22c55e"/>
+<text x="28" y="86" font-family="monospace" font-size="19" font-weight="bold" fill="#f1f5f9">$ python3 subdomain_takeover_checker.py examples/sample-dns.csv</text>
+<text x="28" y="126" font-family="monospace" font-size="19" font-weight="bold" fill="#14b8a6">Subdomain takeover report: examples/sample-dns.csv</text>
+<text x="28" y="156" font-family="monospace" font-size="19" font-weight="bold" fill="#ef4444">Score: 20/100  Grade: F</text>
+<text x="28" y="196" font-family="monospace" font-size="19" fill="#f1f5f9">Summary:</text>
+<text x="28" y="226" font-family="monospace" font-size="19" fill="#f1f5f9">  Records checked: 10</text>
+<text x="28" y="256" font-family="monospace" font-size="19" fill="#f1f5f9">  Confirmed takeovers: 0</text>
+<text x="28" y="286" font-family="monospace" font-size="19" fill="#f1f5f9">  Potential takeovers: 8</text>
+<text x="28" y="326" font-family="monospace" font-size="19" fill="#f1f5f9">Records:</text>
+<text x="28" y="356" font-family="monospace" font-size="19" fill="#f59e0b">  blog.example.com             potential -&gt; GitHub Pages</text>
+<text x="28" y="386" font-family="monospace" font-size="19" fill="#f59e0b">  docs.example.com             potential -&gt; Heroku</text>
+<text x="28" y="416" font-family="monospace" font-size="19" fill="#f59e0b">  files.example.com            potential -&gt; AWS S3</text>
+<text x="28" y="456" font-family="monospace" font-size="19" fill="#94a3b8">  ... 5 more potential takeovers (see examples/sample-output.txt)</text>
+</svg>

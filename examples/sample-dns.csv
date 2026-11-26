@@ -1,0 +1,15 @@
+# Sample DNS export for example.com (synthetic data, all targets are
+# documentation-style examples). Run with:
+#   python3 subdomain_takeover_checker.py examples/sample-dns.csv
+# Add --probe to confirm each match against the live site.
+subdomain,cname
+blog.example.com,sajid.github.io
+docs.example.com,cyberlegends.herokuapp.com
+files.example.com,cyberlegends.s3.amazonaws.com
+shop.example.com,cyberlegends.myshopify.com
+help.example.com,cyberlegends.zendesk.com
+app.example.com,cyberlegends.azurewebsites.net
+old.example.com,retired.tumblr.com
+cdn.example.com,d1234567890.cloudfront.net
+www.example.com,
+api.example.com,api.example.net

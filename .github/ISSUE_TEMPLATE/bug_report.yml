@@ -1,0 +1,58 @@
+name: Bug report
+description: Report a problem with Subdomain Takeover Checker
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. Please fill in as much as you can;
+        the command and the output matter most.
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: The release tag or commit you used (or the output of `python3 subdomain_takeover_checker.py --version`).
+      placeholder: "1.0.0"
+    validations:
+      required: false
+  - type: input
+    id: python
+    attributes:
+      label: Python version and operating system
+      description: Output of `python3 --version`, plus your OS.
+      placeholder: "Python 3.12 on Ubuntu 24.04"
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Command you ran
+      description: The exact command, including any flags.
+      placeholder: |
+        python3 subdomain_takeover_checker.py examples/sample-dns.csv --json
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+      description: What output, score, or exit code did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What actually happened
+      description: Paste the full output, including any error message.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: records
+    attributes:
+      label: DNS records involved (if any)
+      description: Paste the smallest redacted DNS export that reproduces the problem. Use example.com subdomains, never a real domain you do not own; redact real subdomains first.
+    validations:
+      required: false

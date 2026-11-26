@@ -1,0 +1,136 @@
+{
+  "source": "examples/sample-dns.csv",
+  "counts": {
+    "records": 10,
+    "checked": 10,
+    "potential": 8,
+    "confirmed": 0,
+    "unknown_services": 1,
+    "no_cname": 1,
+    "probe_errors": 0
+  },
+  "score": 20,
+  "grade": "F",
+  "findings": [
+    {
+      "severity": "medium",
+      "source": "blog.example.com",
+      "message": "Potential subdomain takeover: blog.example.com points at GitHub Pages (sajid.github.io) and the service was not probed, so it is not known whether the subdomain is claimed. A CNAME to a takeover-prone service that nobody owns can be claimed by an attacker.",
+      "fix": "Run with --probe to confirm, or check the GitHub Pages account for blog.example.com. Claim the subdomain by adding it to a GitHub Pages site, or remove the CNAME."
+    },
+    {
+      "severity": "medium",
+      "source": "docs.example.com",
+      "message": "Potential subdomain takeover: docs.example.com points at Heroku (cyberlegends.herokuapp.com) and the service was not probed, so it is not known whether the subdomain is claimed. A CNAME to a takeover-prone service that nobody owns can be claimed by an attacker.",
+      "fix": "Run with --probe to confirm, or check the Heroku account for docs.example.com. Claim the subdomain in a Heroku app, or remove the CNAME."
+    },
+    {
+      "severity": "medium",
+      "source": "files.example.com",
+      "message": "Potential subdomain takeover: files.example.com points at AWS S3 (cyberlegends.s3.amazonaws.com) and the service was not probed, so it is not known whether the subdomain is claimed. A CNAME to a takeover-prone service that nobody owns can be claimed by an attacker.",
+      "fix": "Run with --probe to confirm, or check the AWS S3 account for files.example.com. Delete the bucket's DNS record, or recreate the bucket with the same name."
+    },
+    {
+      "severity": "medium",
+      "source": "shop.example.com",
+      "message": "Potential subdomain takeover: shop.example.com points at Shopify (cyberlegends.myshopify.com) and the service was not probed, so it is not known whether the subdomain is claimed. A CNAME to a takeover-prone service that nobody owns can be claimed by an attacker.",
+      "fix": "Run with --probe to confirm, or check the Shopify account for shop.example.com. Claim the subdomain in a Shopify store, or remove the CNAME."
+    },
+    {
+      "severity": "medium",
+      "source": "help.example.com",
+      "message": "Potential subdomain takeover: help.example.com points at Zendesk (cyberlegends.zendesk.com) and the service was not probed, so it is not known whether the subdomain is claimed. A CNAME to a takeover-prone service that nobody owns can be claimed by an attacker.",
+      "fix": "Run with --probe to confirm, or check the Zendesk account for help.example.com. Claim the subdomain in a Zendesk help centre, or remove the CNAME."
+    },
+    {
+      "severity": "medium",
+      "source": "app.example.com",
+      "message": "Potential subdomain takeover: app.example.com points at Microsoft Azure (cyberlegends.azurewebsites.net) and the service was not probed, so it is not known whether the subdomain is claimed. A CNAME to a takeover-prone service that nobody owns can be claimed by an attacker.",
+      "fix": "Run with --probe to confirm, or check the Microsoft Azure account for app.example.com. Claim the subdomain in an Azure App Service, or remove the CNAME."
+    },
+    {
+      "severity": "medium",
+      "source": "old.example.com",
+      "message": "Potential subdomain takeover: old.example.com points at Tumblr (retired.tumblr.com) and the service was not probed, so it is not known whether the subdomain is claimed. A CNAME to a takeover-prone service that nobody owns can be claimed by an attacker.",
+      "fix": "Run with --probe to confirm, or check the Tumblr account for old.example.com. Claim the subdomain in a Tumblr blog, or remove the CNAME."
+    },
+    {
+      "severity": "medium",
+      "source": "cdn.example.com",
+      "message": "Potential subdomain takeover: cdn.example.com points at AWS CloudFront (d1234567890.cloudfront.net) and the service was not probed, so it is not known whether the subdomain is claimed. A CNAME to a takeover-prone service that nobody owns can be claimed by an attacker.",
+      "fix": "Run with --probe to confirm, or check the AWS CloudFront account for cdn.example.com. Claim the subdomain in a CloudFront distribution, or remove the CNAME."
+    }
+  ],
+  "results": [
+    {
+      "subdomain": "blog.example.com",
+      "cname": "sajid.github.io",
+      "service": "GitHub Pages",
+      "status": "potential",
+      "probe_detail": null
+    },
+    {
+      "subdomain": "docs.example.com",
+      "cname": "cyberlegends.herokuapp.com",
+      "service": "Heroku",
+      "status": "potential",
+      "probe_detail": null
+    },
+    {
+      "subdomain": "files.example.com",
+      "cname": "cyberlegends.s3.amazonaws.com",
+      "service": "AWS S3",
+      "status": "potential",
+      "probe_detail": null
+    },
+    {
+      "subdomain": "shop.example.com",
+      "cname": "cyberlegends.myshopify.com",
+      "service": "Shopify",
+      "status": "potential",
+      "probe_detail": null
+    },
+    {
+      "subdomain": "help.example.com",
+      "cname": "cyberlegends.zendesk.com",
+      "service": "Zendesk",
+      "status": "potential",
+      "probe_detail": null
+    },
+    {
+      "subdomain": "app.example.com",
+      "cname": "cyberlegends.azurewebsites.net",
+      "service": "Microsoft Azure",
+      "status": "potential",
+      "probe_detail": null
+    },
+    {
+      "subdomain": "old.example.com",
+      "cname": "retired.tumblr.com",
+      "service": "Tumblr",
+      "status": "potential",
+      "probe_detail": null
+    },
+    {
+      "subdomain": "cdn.example.com",
+      "cname": "d1234567890.cloudfront.net",
+      "service": "AWS CloudFront",
+      "status": "potential",
+      "probe_detail": null
+    },
+    {
+      "subdomain": "www.example.com",
+      "cname": "",
+      "service": null,
+      "status": "no_cname",
+      "probe_detail": null
+    },
+    {
+      "subdomain": "api.example.com",
+      "cname": "api.example.net",
+      "service": null,
+      "status": "unknown",
+      "probe_detail": null
+    }
+  ]
+}

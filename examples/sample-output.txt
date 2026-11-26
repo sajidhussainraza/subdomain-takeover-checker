@@ -1,0 +1,39 @@
+Subdomain takeover report: examples/sample-dns.csv
+Score: 20/100  Grade: F
+
+Summary:
+  Records checked: 10
+  Confirmed takeovers: 0
+  Potential takeovers: 8
+  CNAMEs to other services: 1
+  Records with no CNAME: 1
+
+Records:
+  blog.example.com             potential -> GitHub Pages
+  docs.example.com             potential -> Heroku
+  files.example.com            potential -> AWS S3
+  shop.example.com             potential -> Shopify
+  help.example.com             potential -> Zendesk
+  app.example.com              potential -> Microsoft Azure
+  old.example.com              potential -> Tumblr
+  cdn.example.com              potential -> AWS CloudFront
+  www.example.com              no cname
+  api.example.com              unknown
+
+Findings (8):
+  [MEDIUM] blog.example.com: Potential subdomain takeover: blog.example.com points at GitHub Pages (sajid.github.io) and the service was not probed, so it is not known whether the subdomain is claimed. A CNAME to a takeover-prone service that nobody owns can be claimed by an attacker.
+        Fix: Run with --probe to confirm, or check the GitHub Pages account for blog.example.com. Claim the subdomain by adding it to a GitHub Pages site, or remove the CNAME.
+  [MEDIUM] docs.example.com: Potential subdomain takeover: docs.example.com points at Heroku (cyberlegends.herokuapp.com) and the service was not probed, so it is not known whether the subdomain is claimed. A CNAME to a takeover-prone service that nobody owns can be claimed by an attacker.
+        Fix: Run with --probe to confirm, or check the Heroku account for docs.example.com. Claim the subdomain in a Heroku app, or remove the CNAME.
+  [MEDIUM] files.example.com: Potential subdomain takeover: files.example.com points at AWS S3 (cyberlegends.s3.amazonaws.com) and the service was not probed, so it is not known whether the subdomain is claimed. A CNAME to a takeover-prone service that nobody owns can be claimed by an attacker.
+        Fix: Run with --probe to confirm, or check the AWS S3 account for files.example.com. Delete the bucket's DNS record, or recreate the bucket with the same name.
+  [MEDIUM] shop.example.com: Potential subdomain takeover: shop.example.com points at Shopify (cyberlegends.myshopify.com) and the service was not probed, so it is not known whether the subdomain is claimed. A CNAME to a takeover-prone service that nobody owns can be claimed by an attacker.
+        Fix: Run with --probe to confirm, or check the Shopify account for shop.example.com. Claim the subdomain in a Shopify store, or remove the CNAME.
+  [MEDIUM] help.example.com: Potential subdomain takeover: help.example.com points at Zendesk (cyberlegends.zendesk.com) and the service was not probed, so it is not known whether the subdomain is claimed. A CNAME to a takeover-prone service that nobody owns can be claimed by an attacker.
+        Fix: Run with --probe to confirm, or check the Zendesk account for help.example.com. Claim the subdomain in a Zendesk help centre, or remove the CNAME.
+  [MEDIUM] app.example.com: Potential subdomain takeover: app.example.com points at Microsoft Azure (cyberlegends.azurewebsites.net) and the service was not probed, so it is not known whether the subdomain is claimed. A CNAME to a takeover-prone service that nobody owns can be claimed by an attacker.
+        Fix: Run with --probe to confirm, or check the Microsoft Azure account for app.example.com. Claim the subdomain in an Azure App Service, or remove the CNAME.
+  [MEDIUM] old.example.com: Potential subdomain takeover: old.example.com points at Tumblr (retired.tumblr.com) and the service was not probed, so it is not known whether the subdomain is claimed. A CNAME to a takeover-prone service that nobody owns can be claimed by an attacker.
+        Fix: Run with --probe to confirm, or check the Tumblr account for old.example.com. Claim the subdomain in a Tumblr blog, or remove the CNAME.
+  [MEDIUM] cdn.example.com: Potential subdomain takeover: cdn.example.com points at AWS CloudFront (d1234567890.cloudfront.net) and the service was not probed, so it is not known whether the subdomain is claimed. A CNAME to a takeover-prone service that nobody owns can be claimed by an attacker.
+        Fix: Run with --probe to confirm, or check the AWS CloudFront account for cdn.example.com. Claim the subdomain in a CloudFront distribution, or remove the CNAME.
